@@ -55,9 +55,17 @@
             <span class="cd-words-wrapper waiting">
                 <b class="is-visible">Manage Your Time</b>
                 <b>Be More Productive</b>
-                <b>Succeed in the Classroom</b>
+                <b>Not Miss Assignments</b>
             </span>
         </h1>
+         <button class="loginBtn loginBtn--google">
+      <% if current_user %>
+        Signed in as <strong><%= current_user.name %></strong>!
+        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <% else %>
+        <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
+      <% end %>
+    </button>
     </div>
 </div>
 
